@@ -12,6 +12,12 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"]
 }));
+app.options('*', cors({
+  origin: "https://innovative-delight-production.up.railway.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 app.use("/users", require("./routes/userRoutes"));
