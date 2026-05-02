@@ -1,8 +1,6 @@
-cat > Caddyfile << 'EOF'
 :80 {
   root * /app/dist
   file_server
   try_files {path} /index.html
   encode gzip
 }
-EOF
