@@ -1,4 +1,4 @@
-require("dotenv").config(); // 👈 ADD THIS AT TOP
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -14,12 +14,12 @@ app.use("/auth", require("./routes/authRoutes"));
 app.use("/projects", require("./routes/projectRoutes"));
 app.use("/tasks", require("./routes/taskRoutes"));
 
-// ✅ MongoDB connection using ENV
+// MongoDB connection using ENV
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
-// ✅ Use PORT from ENV
+//  Use PORT from ENV
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
