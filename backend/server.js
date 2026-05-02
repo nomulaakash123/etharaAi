@@ -6,12 +6,19 @@ const cors = require("cors");
 
 const app = express();
 
+
+// Add CORS middleware before routes
 app.use(cors({
-  origin: 'https://api-production.up.railway.app/auth/signup', 
+  origin: 'https://innovative-delight-production.up.railway.app',  // Your frontend URL
   credentials: true,  // Allow cookies or authorization headers
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Include OPTIONS here
-  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow custom headers (e.g., Authorization)
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Include OPTIONS for preflight
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow custom headers (Authorization)
 }));
+
+// Your routes go below this
+app.post('/auth/signup', (req, res) => {
+  // signup logic here
+});
 app.use(express.json());
 
 app.use("/users", require("./routes/userRoutes"));
