@@ -7,9 +7,9 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: "https://innovative-delight-production.up.railway.app",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: "*",
+  credentials: false,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json());
