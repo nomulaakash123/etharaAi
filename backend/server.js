@@ -7,10 +7,10 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: "*",
-  credentials: false,
+  origin: 'https://innovative-delight-production.up.railway.app',  
+  credentials: true,  // Allow cookies or authentication headers
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type"]
+  allowedHeaders: ["Content-Type", "Authorization"]  // Allow any custom headers like Authorization
 }));
 app.use(express.json());
 
