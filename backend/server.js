@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: 'https://innovative-delight-production.up.railway.app/', 
+  origin: 'https://api-production.up.railway.app/auth/signup', 
   credentials: true,  // Allow cookies or authorization headers
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Include OPTIONS here
   allowedHeaders: ['Content-Type', 'Authorization'],  // Allow custom headers (e.g., Authorization)
